@@ -2,7 +2,7 @@ var xray = require('aws-xray-sdk-core');
 var aws = xray.captureAWS(require('aws-sdk'));
 
 var lambda = new aws.Lambda({
-  region: 'us-east-1' //change to your region
+  region: 'us-west-1' //change to your region
 });
 
 exports.handler = (event, context, callback) => {
@@ -16,7 +16,7 @@ exports.handler = (event, context, callback) => {
     if (data.Payload) {
       callback(null, {
         'statusCode': '200',
-        'body': 'HelloX from SimpleFunction-a ' + data.Payload
+        'body': 'Hello from SimpleFunction-a. Plus: ' + data.Payload
       });
       //context.succeed(data.Payload)
     }

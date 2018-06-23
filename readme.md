@@ -4,6 +4,10 @@
 
 * Make sure you the right region is configured:  `aws configure`
 
+* `make lambda-create`
+
+* Add API-Gateway trigger for lambdas: simplefunction-a & simplefunction-c
+
 
 # Links:
 
