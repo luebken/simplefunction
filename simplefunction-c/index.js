@@ -1,7 +1,8 @@
 var xray = require('aws-xray-sdk-core');
 var aws = xray.captureAWS(require('aws-sdk'));
 
-aws.config.region = 'us-east-1';
+aws.config.region = 'us-west-1';
+
 var sns = new aws.SNS();
 var dynamodb = new aws.DynamoDB();
 
@@ -23,7 +24,7 @@ dynamodb.putItem(params, function (err, data) {
   
   sns.publish({
     Message: 'Message from simplefunction-c',
-    TopicArn: 'arn:aws:sns:us-east-1:339468856116:simplefunction'
+    TopicArn: 'arn:aws:sns:us-west-1:339468856116:simplefunction'
   }, function(err, data) {
     if (err) {
       console.log(err.stack);
